@@ -18,4 +18,3 @@ variable "values_file" {
   description = "Path to the values.yaml file"
   type        = string
 }
-
