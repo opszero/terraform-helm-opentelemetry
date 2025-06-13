@@ -1,0 +1,29 @@
+mode: daemonset
+
+image:
+  repository: otel/opentelemetry-collector
+
+command:
+  name: otelcol
+
+config:
+  receivers:
+    otlp:
+      protocols:
+        grpc: {}
+        http: {}
+
+  exporters:
+    debug:
+      verbosity: detailed
+    prometheus:
+      endpoint: "0.0.0.0:8889"
+
+  service:
+    pipelines:
+      metrics:
+        receivers: [otlp]
+        exporters: [debug, prometheus]
+      traces:
+        receivers: [otlp]
+        exporters: [debug]

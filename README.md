@@ -2,13 +2,22 @@
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_helm"></a> [helm](#provider\_helm) | n/a |
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_enable_otel_collector"></a> [enable\_otel\_collector](#input\_enable\_otel\_collector) | Enable or disable otel\_collector deployment | `bool` | `true` | no |
+| <a name="input_name"></a> [name](#input\_name) | n/a | `string` | `"otl-collector"` | no |
+| <a name="input_namespace"></a> [namespace](#input\_namespace) | n/a | `string` | `"otl-collector"` | no |
+| <a name="input_values_file"></a> [values\_file](#input\_values\_file) | Path to the values.yaml file | `string` | n/a | yes |
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [helm_release.otel_collector](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
 ## Outputs
 
 No outputs.
